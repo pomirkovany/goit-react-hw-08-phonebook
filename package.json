@@ -1,13 +1,14 @@
 {
-  "name": "react-hw-06-phonebook",
+  "name": "react-hw-07-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Mrichk0/Mrichk0-goit-react-hw-06-phonebook.git",
+  "homepage": "https://github.com/Mrichk0/goit-react-hw-07-phonebook.git",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.5",

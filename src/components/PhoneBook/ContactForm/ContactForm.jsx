@@ -11,7 +11,6 @@ const ContactForm = ({ onSubmit }) => {
   });
 
   const { name, number } = state;
-  console.log(name);
 
   return (
     <form action="" onSubmit={handleSubmit} className={style.form}>
