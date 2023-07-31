@@ -1,23 +1,26 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchContacts, addContact, deleteContact } from 'redux/operations';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+} from 'redux/contacts/operations';
 
 import styles from './phoneBook.module.css';
 
-// import { deleteContact } from '../../redux/contacts/contactsSlice';
 import { setFilter } from 'redux/filter/filtersSlice';
-
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
-
+import { getFilter } from 'redux/filter/filter-selectors';
 import {
   getContacts,
   getIsLoading,
   getError,
 } from '../../redux/contacts/contacts-selectors';
-import { getFilter } from 'redux/filter/filter-selectors';
+
+import Loader from 'shared/components/Loader';
+import ContactForm from './ContactForm';
+import ContactList from './ContactList';
+import Filter from './Filter';
 
 const PhoneBook = () => {
   const dispatch = useDispatch();
@@ -59,7 +62,7 @@ const PhoneBook = () => {
       <ContactForm onSubmit={addNewContact} />
       <h2>Contacts</h2>
       <Filter filter={filter} changeFilter={changeFilter} />
-      {isLoading && !error && <p>...loading</p>}
+      {isLoading && !error && <Loader />}
       <ContactList contacts={filterContacts} removeContact={removeContact} />
     </div>
   );
